@@ -60,6 +60,7 @@ public class AvailableFragment extends Fragment implements AvailableAdapter.onNo
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
                     String latitude, longitude, target, assigned_to, phase, budget;
                     latitude = ds.child("latitude").getValue().toString();

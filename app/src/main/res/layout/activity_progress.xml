@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_margin="6dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:id="@+id/description"
+        android:hint="Enter the description"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:padding="6dp"
+        android:textSize="15sp"
+        android:layout_height="wrap_content"
+        android:text="Upload Photo"
+        android:id="@+id/upload"
+        android:background="#8D8C8C"/>
+    <ImageView
+        android:layout_width="2000dp"
+        android:layout_height="200dp"
+        android:layout_margin="6dp"
+        android:id="@+id/image_uploaded"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Progress"
+        android:id="@+id/submit_report"/>
 
 </LinearLayout>

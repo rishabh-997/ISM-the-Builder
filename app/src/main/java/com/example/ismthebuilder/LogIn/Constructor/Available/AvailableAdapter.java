@@ -37,7 +37,7 @@ public class AvailableAdapter extends RecyclerView.Adapter<AvailableAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         AvailableList model = arraylist.get(position);
         holder.name.setText(model.getName());
-        holder.assigned.setText("Assigned to "+model.getName());
+        holder.assigned.setText("Assigned to "+model.getAssigned_to());
         holder.phase.setText(model.getPhase()+" phase");
         holder.budget.setText("To be completed in days : "+model.getBudget());
     }

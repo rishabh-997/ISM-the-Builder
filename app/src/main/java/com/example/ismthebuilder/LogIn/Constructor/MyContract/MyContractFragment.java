@@ -60,6 +60,7 @@ public class MyContractFragment extends Fragment implements MyContractAdapter.on
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list.clear();
                 for(DataSnapshot ds:dataSnapshot.getChildren()) {
                     String latitude, longitude, target, assigned_to, phase, budget;
                     latitude = ds.child("latitude").getValue().toString();
@@ -70,8 +71,10 @@ public class MyContractFragment extends Fragment implements MyContractAdapter.on
                     budget = ds.child("budget").getValue().toString();
                     String name= ds.child("name").getValue().toString();
 
-                    AvailableList model = new AvailableList(latitude,longitude,target,assigned_to,phase,budget,name, ds.getKey());
-                    list.add(model);
+                    if(assigned_to.equals(sharedPref.getEmail())) {
+                        AvailableList model = new AvailableList(latitude, longitude, target, assigned_to, phase, budget, name, ds.getKey());
+                        list.add(model);
+                    }
                 }
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
